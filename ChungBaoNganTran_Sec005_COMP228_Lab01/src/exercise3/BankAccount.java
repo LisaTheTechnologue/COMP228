@@ -34,11 +34,10 @@ public class BankAccount {
 		}
 	}
 
-	public static String getAccountInfo(String userName) {
-		String stringFormat ="";
-		if (userName.equals(name)) {
-		stringFormat = String.format("Account ID: %s%nName: %s%nBalance: %s%n", accnumber, name, balance);
-		}
+	public static String getAccountInfo() {
+		
+		String stringFormat = String.format("Account ID: %s%nName: %s%nBalance: %s%n", accnumber, name, balance);
+		
 		return stringFormat;
 	}
 }

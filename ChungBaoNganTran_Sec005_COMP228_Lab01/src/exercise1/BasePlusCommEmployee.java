@@ -22,7 +22,7 @@ public class BasePlusCommEmployee {
 		this.name = name;
 	}
 
-	static int baseSalary;
+	int baseSalary;
 
 	public int getBaseSalary() {
 		return baseSalary;
@@ -32,7 +32,7 @@ public class BasePlusCommEmployee {
 		this.baseSalary = baseSalary;
 	}
 
-	static double commissionRate;
+	double commissionRate;
 
 	public double getCommissionRate() {
 		return commissionRate;
@@ -42,7 +42,7 @@ public class BasePlusCommEmployee {
 		this.commissionRate = commissionRate;
 	}
 
-	static double totalSales;
+	double totalSales;
 
 	public double getTotalSales() {
 		return totalSales;
@@ -56,7 +56,7 @@ public class BasePlusCommEmployee {
 		super();
 	}
 
-	public static double calculateCommission() {
+	public double calculateCommission() {
 		return (baseSalary + commissionRate * totalSales / 100);
 	}
 

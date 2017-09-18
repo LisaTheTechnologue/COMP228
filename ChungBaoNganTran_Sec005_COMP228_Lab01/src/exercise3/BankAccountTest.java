@@ -5,22 +5,30 @@ import javax.swing.JOptionPane;
 public class BankAccountTest {
 
 	public static void main(String[] args) {
-		JOptionPane.showMessageDialog(null, "Welcome to ABC Bank!");
+		JOptionPane.showMessageDialog(null, "Welcome to ABC Bank!\nLet's create an account!");
 
-		BankAccount myAccount1 = new BankAccount(40001, "Jolisa", 40000.52);
-		
+		// user initialize account
+		int accID = Integer.parseInt(JOptionPane.showInputDialog("Account ID: "));
 		String accName = JOptionPane.showInputDialog("What is your account name?");
-		String message = "Your account: \n" + BankAccount.getAccountInfo(accName);
+		double accBalance = Double.parseDouble(JOptionPane.showInputDialog("Your balance is: "));
+		BankAccount myAccount1 = new BankAccount(accID, accName, accBalance);
+
+		// display user input
+		String message = "Your account: \n" + BankAccount.getAccountInfo();
 		JOptionPane.showMessageDialog(null, message);
-		
-		int reply = JOptionPane.showConfirmDialog(null, "To continue, press OK.\nTo end, press No","Continue?",JOptionPane.YES_NO_OPTION);
-		
+
+		// just initialize or update
+		int reply = JOptionPane.showConfirmDialog(null, "To continue, press OK.\nTo end, press No", "Continue?",
+				JOptionPane.YES_NO_OPTION);
+
+		// update
 		if (reply == JOptionPane.YES_OPTION) {
-		String accChoice = JOptionPane.showInputDialog("Debit or Credit");
-		Double accAmount = Double.parseDouble(JOptionPane.showInputDialog("Amount: "));
-		BankAccount.debitOrCredit(accChoice, accAmount);
-		String accResult = "Your account: \n" + BankAccount.getAccountInfo(accName);
-		JOptionPane.showMessageDialog(null, accResult);
+			String accChoice = JOptionPane.showInputDialog("Debit or Credit");
+			Double accAmount = Double.parseDouble(JOptionPane.showInputDialog("Amount: "));
+			BankAccount.debitOrCredit(accChoice, accAmount);
+			String accResult = "Your account: \n" + BankAccount.getAccountInfo();
+			JOptionPane.showMessageDialog(null, accResult);
+
 		}
 	}
 

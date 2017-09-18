@@ -2,36 +2,53 @@ package exercise4;
 
 public class GameObject {
 
-	int center;
+	static int centerX;
 
-	public int getCenter() {
-		return center;
+	public int getCenterX() {
+		return centerX;
 	}
 
-	int velocity;
+	static int centerY;
 
-	public int getVelocity() {
+	public int getCenterY() {
+		return centerY;
+	}
+
+	static double velocity;
+
+	public double getVelocity() {
 		return velocity;
 	}
 
-	boolean state;
+	static String state;
 
-	public boolean isState() {
+	public String getState() {
 		return state;
 	}
 
-	int rotation;
+	static int rotation;
 
 	public int getRotation() {
 		return rotation;
 	}
 
-	public GameObject(int center, int velocity, boolean state, int rotation) {
+	public GameObject(int centerX, int centerY, double velocity, boolean state, int rotation) {
 		super();
-		this.center = center;
+		this.centerX = centerX;
+		this.centerY = centerY;
 		this.velocity = velocity;
-		this.state = state;
+		if (state) {
+			this.state = "alive";
+		} else
+			this.state = "dead";
+
 		this.rotation = rotation;
 	}
-	
+
+	public static String getGameObjInfo() {
+
+		String stringFormat = String.format("Center: {%s,%s}%nVelocity: %s%nStatus: %s%nRotation: %s", centerX,centerY,velocity,state,rotation);
+
+		return stringFormat;
+	}
 }
