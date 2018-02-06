@@ -14,13 +14,13 @@ Scanner
 Print 
 
 ## 2. Lab 2:
-###ex1:
+### Ex1:
 If/Switch
 While loop
-###Ex2:
+### Ex2:
 Random
 Array
-###Ex3:
+### Ex3:
 Overload
 
 ## 3. Lab 3:
