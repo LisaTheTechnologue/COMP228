@@ -34,3 +34,5 @@ Map
 ## 5. Lab 5: 
 JavaFX in SceneBuilder
 
+## 6. Mid-term:
+Polymorphism and inheritance
